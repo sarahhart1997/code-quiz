@@ -80,3 +80,10 @@ body.wrong {
 .hide {
     display: none;
 }
+
+/* start button larger */
+.start-btn {
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
