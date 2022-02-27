@@ -1,13 +1,23 @@
+// declare items we are using
 const startButton = document.getElementById('start-btn')
+const questionContainerElement = document.getElementById
 
 startButton.addEventListener('click', startGame)
 
+// hide start button
 function startGame() {
     startButton.classList.add('hide')
+// shuffle questions
+
+// reveal the next question
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
 }
 
+//reset questions, background, buttons
+
 //questions
-var questions = [
+const questions = [
     {
         question:"Commonly used data types do NOT include:",
         choices:["strings", "booleans", "alerts", "numbers"],
