@@ -10,8 +10,20 @@ function startGame() {
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
-// shuffle questions
 
+// sort through the questions and create buttons for them
+function showQuestion(question) {
+    questionContainerElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+    // check if answer is correct
+        if (answer.correct) {
+            button.dataset
+        }
+    })
+}
 
 //reset questions, background, buttons
 
