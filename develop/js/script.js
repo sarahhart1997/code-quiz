@@ -1,18 +1,17 @@
 // declare items we are using
 const startButton = document.getElementById('start-btn')
-const questionContainerElement = document.getElementById
+const questionContainerElement = document.getElementById ('question-container')
 
 startButton.addEventListener('click', startGame)
 
-// hide start button
+// hide start button & reveal questions
 function startGame() {
     startButton.classList.add('hide')
-// shuffle questions
-
-// reveal the next question
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
+// shuffle questions
+
 
 //reset questions, background, buttons
 
