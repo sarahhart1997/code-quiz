@@ -19,7 +19,6 @@ startButton.addEventListener('click', startGame)
 function startGame() {
     startButton.classList.add('hide')
     mainContainer.classList.add('hide')
-    questionHeader.classList.add('hide')
     // reveal rules page //
     quizRules.classList.remove('hide')
 }
