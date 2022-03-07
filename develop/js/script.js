@@ -10,6 +10,7 @@ const continueButton = document.getElementById('continue')
 const restartButton = document.getElementById('restart')
 const questionHeader = document.getElementById('container-header')
 const mainContainer = document.getElementById('main-container')
+const quitButton = document.getElementById('quit')
 
 let shuffledQuestions, questionList
 
@@ -22,6 +23,8 @@ function startGame() {
     // reveal rules page //
     quizRules.classList.remove('hide')
 }
+
+// exit button reloads page
 
 //Continue past rules to first question
 continueButton.addEventListener('click', firstQuestion)
@@ -46,9 +49,9 @@ function setNextQuestion() {
 function showQuestion(question) {
     questionContainerElement.innerText = question.question
     questionHeader.classList.remove('hide')
-    question.answers.forEach(answers => {
+    question.answers.forEach(answer => {
         const button = document.createElement('button')
-        button.innerText = answers.text
+        button.innerText = answer.text;
         button.classList.add('btn')
     // check if answer is correct
         if (answers.correct) {
@@ -110,7 +113,7 @@ const questions = [
     },
     {
         question:"The condition in an if/else statement is enclosed with ________",
-        answers: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+        answers:["quotes", "curly brackets", "parenthesis", "square brackets"],
         correct: "parenthesis"
     },
     {
