@@ -5,13 +5,16 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 const questionContainerElement = document.getElementById ('question-container')
 const questionElement = document.getElementById('question')
 
+let shuffledQuestions, questionList
+
 startButton.addEventListener('click', startGame)
 
 // hide start button
 function startGame() {
     startButton.classList.add('hide')
-    // shuffle questions
-    
+    // shuffle questions/question list defined
+    questionList = 0
+    shuffledQuestions = questions.sort(() => Math.random() - 0.7)
     // reveal next question
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
@@ -20,7 +23,7 @@ function startGame() {
 // showing the questions
 function setNextQuestion() {
     resetAll()
-    showQuestion()
+    showQuestion(shuffledQuestions[questionList])
 }
 
 // sort through the questions and create buttons for them
