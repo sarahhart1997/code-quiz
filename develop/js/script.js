@@ -1,8 +1,8 @@
 // declare items we are using
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById ('question-container')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const questionContainerElement = document.getElementById ('question-container')
 const questionElement = document.getElementById('question')
 
 startButton.addEventListener('click', startGame)
@@ -11,7 +11,7 @@ startButton.addEventListener('click', startGame)
 function startGame() {
     startButton.classList.add('hide')
     // shuffle questions
-
+    
     // reveal next question
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
