@@ -2,6 +2,8 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById ('question-container')
+const answerButtonsElement = document.getElementById('answer-buttons')
+const questionElement = document.getElementById('question')
 
 startButton.addEventListener('click', startGame)
 
@@ -13,6 +15,12 @@ function startGame() {
     // reveal next question
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
+}
+
+// showing the questions
+function setNextQuestion() {
+    resetAll()
+    showQuestion()
 }
 
 // sort through the questions and create buttons for them
