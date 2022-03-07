@@ -38,6 +38,11 @@ body.wrong {
     box-shadow: 0 0 10px 2px;
 }
 
+/* Hide quiz rules until appropriate time */
+.quiz-rules {
+    display: none;
+}
+
 /* Make rules title/rules stand out */
 .rules-title {
     height: 60px;
