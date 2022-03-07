@@ -45,17 +45,17 @@ function setNextQuestion() {
 // sort through the questions and create buttons for them
 function showQuestion(question) {
     questionContainerElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
+    question.answers.forEach(answers => {
+        const button = document.createElement('answer-button')
+        button.innerText = answers.text
         button.classList.add('btn')
     // check if answer is correct
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
+        if (answers.correct) {
+            button.dataset.correct = answers.correct
         }
     // event listener which runs select answers function
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        answerbutton.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(answerbutton)
     })
 }
 
