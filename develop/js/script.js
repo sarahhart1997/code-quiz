@@ -19,6 +19,7 @@ startButton.addEventListener('click', startGame)
 function startGame() {
     startButton.classList.add('hide')
     mainContainer.classList.add('hide')
+    questionHeader.classList.add('hide')
     // reveal rules page //
     quizRules.classList.remove('hide')
 }
@@ -45,6 +46,7 @@ function setNextQuestion() {
 // sort through the questions and create buttons for them
 function showQuestion(question) {
     questionContainerElement.innerText = question.question
+    questionHeader.classList.remove('hide')
     question.answers.forEach(answers => {
         const button = document.createElement('button')
         button.innerText = answers.text

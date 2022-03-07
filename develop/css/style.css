@@ -19,7 +19,7 @@ body {
 }
 
 /* quiz header styling */
-.container-header {
+#container-header {
     height: 70px;
     padding: 0 30px;
     background: lightgrey;
@@ -29,13 +29,13 @@ body {
     border-radius: 5px;
 }
 
-.container-header .title {
+#container-header .title {
     font-size: 20px;
     font-weight: 600;
     color: var(--color-base);
 }
 
-.container-header .timer {
+#container-header .timer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,13 +47,13 @@ body {
     padding: 0 8px;
 }
 
-.container-header .timer .time-text {
+#container-header .timer .time-text {
     font-weight: 400;
     font-size: 17px;
     user-select: none;
 }
 
-.container-header .timer .timer-min {
+#container-header .timer .timer-min {
     font-size: 18px;
     font-weight: 500;
     background: var(--color-base);
