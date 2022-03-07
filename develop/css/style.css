@@ -2,6 +2,7 @@
     --color-neutral: 200;
     --color-wrong: 0;
     --color-correct: 145;
+    --color-base: purple;
 }
 
 body {
@@ -16,7 +17,22 @@ body {
     background-color: hsl(var(--color), 100%, 20%);
 }
 
-/* timer styling */
+/* quiz header styling */
+.container header {
+    height: 70px;
+    padding: 0 30px;
+    background: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px 5px 0 0;
+}
+
+.container header .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-base);
+}
 
 
 /* style change based on wrong or right */
@@ -53,13 +69,13 @@ body.wrong {
     padding: 0 35px;
     font-size: 20px;
     font-weight: 900;
-    color: purple;
+    color: var(--color-base);
 }
 
 /* Make the time alotted stand out */
 .rule span {
     font-weight: 600;
-    color: purple;
+    color: var(--color-base);
 }
 
 /* rules page buttons positioning */
@@ -89,12 +105,12 @@ body.wrong {
 .rules-buttons button.continue {
     color: white;
     border-color: black;
-    background: purple;
+    background: var(--color-base);
 }
 
 .rules-buttons button.quit {
-    color: purple;
-    border-color: purple;
+    color: var(--color-base);
+    border-color: var(--color-base);
 }
 
 /* Rules list spacing */
@@ -115,7 +131,7 @@ body.wrong {
 .btn {
     --color: var(--color-neutral);
     border: 1px solid grey;
-    background-color: purple;
+    background-color: var(--color-base);
     border-radius: 5px;
     padding: 5px 10px;
     color: white;
