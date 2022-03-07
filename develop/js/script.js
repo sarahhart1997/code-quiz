@@ -4,6 +4,12 @@ const nextButton = document.getElementById('next-btn')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const questionContainerElement = document.getElementById ('question-container')
 const questionElement = document.getElementById('question')
+const quizRules = document.getElementById('quiz-rules')
+const resultsPage = document.getElementById('result-box')
+const continueButton = document.getElementById('continue')
+const restartButton = document.getElementById('restart')
+const questionHeader = document.getElementById('container-header')
+const mainContainer = document.getElementById('main-container')
 
 let shuffledQuestions, questionList
 
@@ -12,6 +18,16 @@ startButton.addEventListener('click', startGame)
 // hide start button
 function startGame() {
     startButton.classList.add('hide')
+    mainContainer.classList.add('hide')
+    // reveal rules page //
+    quizRules.classList.remove('hide')
+}
+
+//Continue past rules to first question
+continueButton.addEventListener('click', questionStart)
+
+function questionStart() {
+    quizRules.classList.add('hide')
     // shuffle questions/question list defined
     questionList = 0
     shuffledQuestions = questions.sort(() => Math.random() - 0.7)
@@ -76,6 +92,11 @@ function clearSetClass(element) {
 //subtracts for incorrect answers
 
 //keeps timer from counting in the negative
+
+//show results 
+function showResults() {
+    resultsPage.classList.remove('hide')
+}
 
 //submit the score
 

@@ -9,14 +9,14 @@
 </head>
 <body>
     <!-- Questions Container -->
-    <div class="container">
-        <header>
+    <div id=main-container class="container">
+        <div id="continer-header" class="hide">
             <div class="title">Coding Quiz!</div>
             <div class="timer">
                 <div class="time-text">Time Remaining</div>
                 <div class="timer-min">10</div>
             </div>
-        </header>
+        </div>
         <div id="question-container" class="hide">
             <div id="question">Question</div>
             <div id="answer-buttons" class="btn-grid">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <!-- Quiz Rules -->
-    <div class="quiz-rules">
+    <div id="quiz-rules" class="hide">
         <div class="rules-title">
             <span>Rules to Live By</span>
         </div>
@@ -44,21 +44,21 @@
         </div>
         <div class="window-buttons">
             <button class="quit">Exit Quiz</button>
-            <button class="restart">Continue</button>
+            <button id="continue" class="restart">Continue</button>
         </div>
     </div>
     <!-- Results box -->
-    <div class="result-box">
+    <div id="result-box" class="hide">
         <div class="icon">
             <i class="fas fa-crown"></i>
         </div>
         <div class="complete-text">Congrats! You finished!</div>
         <div class="score-text">
-            <span>You received <p>2</p> out of <p>5</p></2></span>
+            <span>You received <p>2</p> out of <p>5</p></span>
         </div>
         <div class="window-buttons">
             <button class="quit">Exit Quiz</button>
-            <button class="restart">Replay Quiz</button>
+            <button id="restart" class="restart">Replay Quiz</button>
         </div>
     </div>
 </body>
