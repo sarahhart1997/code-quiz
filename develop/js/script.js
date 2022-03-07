@@ -24,23 +24,22 @@ function startGame() {
 }
 
 //Continue past rules to first question
-continueButton.addEventListener('click', questionStart)
+continueButton.addEventListener('click', nextQuestion)
 
-function questionStart() {
-    quizRules.classList.add('hide')
-    // shuffle questions/question list defined
+function nextQuestion() {
+    //shuffle questions/question list defined
     questionList = 0
     shuffledQuestions = questions.sort(() => Math.random() - 0.7)
+    quizRules.classList.add('hide')
     // reveal next question
     questionContainerElement.classList.remove('hide')
-    setNextQuestion()
 }
 
 // showing the questions
-function setNextQuestion() {
-    resetAll()
-    showQuestion(shuffledQuestions[questionList])
-}
+// function setNextQuestion() {
+//     resetAll()
+//     showQuestion(shuffledQuestions[questionList])
+// }
 
 // sort through the questions and create buttons for them
 function showQuestion(question) {

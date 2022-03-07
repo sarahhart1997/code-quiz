@@ -76,7 +76,7 @@ body.wrong {
 }
 
 /* making the main container stand out from the background */
-.container, .quiz-rules {
+#main-container, #quiz-rules {
     width: 800px;
     max-width: 80%;
     background-color: white;
