@@ -34,9 +34,10 @@ function showQuestion(question) {
 
 //replace html answers with answers from the string
 
-//reset questions, background, buttons
+//delete existing html buttons
 function resetAll() {
     nextButton.classList.add('hide')
+    // if there is a child remove it.
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
         (answerButtonsElement.firstChild)
