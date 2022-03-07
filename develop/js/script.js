@@ -46,7 +46,7 @@ function setNextQuestion() {
 function showQuestion(question) {
     questionContainerElement.innerText = question.question
     question.answers.forEach(answers => {
-        const button = document.createElement('answer-button')
+        const button = document.createElement('button')
         button.innerText = answers.text
         button.classList.add('btn')
     // check if answer is correct
@@ -54,8 +54,8 @@ function showQuestion(question) {
             button.dataset.correct = answers.correct
         }
     // event listener which runs select answers function
-        answerbutton.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(answerbutton)
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
     })
 }
 
