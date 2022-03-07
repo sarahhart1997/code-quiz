@@ -1,12 +1,16 @@
 // declare items we are using
 const startButton = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById ('question-container')
 
 startButton.addEventListener('click', startGame)
 
-// hide start button & reveal questions
+// hide start button
 function startGame() {
     startButton.classList.add('hide')
+    // shuffle questions
+
+    // reveal next question
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
@@ -20,12 +24,28 @@ function showQuestion(question) {
         button.classList.add('btn')
     // check if answer is correct
         if (answer.correct) {
-            button.dataset
+            button.dataset.correct = answer.correct
         }
+    // event listener which runs select answers function
+        button.addEventListener('click', selectAnswer)
+        answerButtonElement.appendChild(button)
     })
 }
 
 //reset questions, background, buttons
+function resetAll() {
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild
+        (answerButtonsElement.firstChild)
+    }
+}
+
+//subtracts for incorrect answers
+
+//keeps timer from counting in the negative
+
+//submit the score
 
 //questions
 const questions = [
@@ -55,11 +75,3 @@ const questions = [
         correct:"console.log"
     }
 ];
-
-//loops through the questions
-
-//subtracts for incorrect answers
-
-//keeps timer from counting in the negative
-
-//submit the score
