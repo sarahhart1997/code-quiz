@@ -32,6 +32,11 @@ function showQuestion(question) {
     })
 }
 
+//replace html answers with answers from the string
+selectAnswer() {
+    
+}
+
 //reset questions, background, buttons
 function resetAll() {
     nextButton.classList.add('hide')
@@ -51,12 +56,12 @@ function resetAll() {
 const questions = [
     {
         question:"Commonly used data types do NOT include:",
-        choices:["strings", "booleans", "alerts", "numbers"],
+        answers:["strings", "booleans", "alerts", "numbers"],
         correct:"alerts"
     },
     {
         question:"The condition in an if/else statement is enclosed with ________",
-        choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+        answers: ["quotes", "curly brackets", "parenthesis", "square brackets"],
         correct: "parenthesis"
     },
     {
