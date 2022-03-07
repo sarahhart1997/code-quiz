@@ -28,14 +28,11 @@ function showQuestion(question) {
         }
     // event listener which runs select answers function
         button.addEventListener('click', selectAnswer)
-        answerButtonElement.appendChild(button)
+        answerButtonsElement.appendChild(button)
     })
 }
 
 //replace html answers with answers from the string
-selectAnswer() {
-    
-}
 
 //reset questions, background, buttons
 function resetAll() {
@@ -44,6 +41,22 @@ function resetAll() {
         answerButtonsElement.removeChild
         (answerButtonsElement.firstChild)
     }
+}
+
+// change class for if right or wrong
+function setClass (element, correct) {
+    clearSetClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+// clear set class
+function clearSetClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }
 
 //subtracts for incorrect answers
