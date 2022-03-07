@@ -43,8 +43,10 @@ function showQuestion(question) {
     })
 }
 
-//replace html answers with answers from the string
-
+//insert answers from the string
+function selectAnswer () {
+    answerButtonsElement.children
+}
 //delete existing html buttons
 function resetAll() {
     nextButton.classList.add('hide')
