@@ -110,7 +110,7 @@ body.wrong {
 }
 
 /* rules page buttons positioning */
-.rules-buttons {
+.window-buttons {
     height: 60px;
     display: flex;
     align-items: center;
@@ -120,7 +120,7 @@ body.wrong {
 }
 
 /* rules buttons color styling */
-.rules-buttons button {
+.window-buttons button {
     margin: 0 5px;
     height: 40px;
     width: 100px;
@@ -133,13 +133,13 @@ body.wrong {
 }
 
 /* Making quit button and continue botton look different */
-.rules-buttons button.continue {
+.window-buttons button.restart {
     color: white;
     border-color: black;
     background: var(--color-base);
 }
 
-.rules-buttons button.quit {
+.window-buttons button.quit {
     color: var(--color-base);
     border-color: var(--color-base);
 }
