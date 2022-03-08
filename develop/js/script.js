@@ -51,15 +51,15 @@ function showQuestion(question) {
     questionHeader.classList.remove('hide')
     question.answers.forEach(answer => {
         const button = document.createElement('button')
-        button.innerText = answer.text;
+        button.innerText = answer;
         button.classList.add('btn')
     // check if answer is correct
-        if (answers.correct) {
-            button.dataset.correct = answers.correct
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
         }
     // event listener which runs select answers function
         button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
+        questionContainerElement.appendChild(button)
     })
 }
 
