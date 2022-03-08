@@ -159,7 +159,7 @@ body.wrong {
 }
 
 /* answer spacing/organization */
-.btn-grid {
+.btn-grid, .btn {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
