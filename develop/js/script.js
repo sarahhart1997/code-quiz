@@ -57,7 +57,7 @@ function showQuestion(question) {
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
-    // event listener which runs select answers function
+    // event listener which runs select answer function
         button.addEventListener('click', selectAnswer)
         questionContainerElement.appendChild(button)
     })
@@ -67,6 +67,7 @@ function showQuestion(question) {
 function selectAnswer () {
     answerButtonsElement.children
 }
+
 //delete existing html buttons
 function resetAll() {
     nextButton.classList.add('hide')
