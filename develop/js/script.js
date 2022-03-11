@@ -42,9 +42,8 @@ function firstQuestion() {
 }
 
 // Starts the timer on the button, timer displays on screen.
-timer.addEventListener("click", ???? () {
-    // If there is 
-})
+// timer.addEventListener("click", ???? () {
+// })
 
 // showing the questions
 function setNextQuestion() {
