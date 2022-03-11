@@ -64,39 +64,53 @@ function showQuestion(question) {
 }
 
 //insert answers from the string
-function selectAnswer () {
-    answerButtonsElement.children
+function selectAnswer (question, correct) {
+    if (question.answer === questions.correct) {
+        // correct answer
+        // add the class of correct so that all appropriate CSS runs
+        element.classList.add('correct')
+        // increase the score
+        score++
+        // Fun message
+        createDiv.textContent = "Yay!! " + questions[questionIndex].correct;
+    } else {
+        // incorrect answer
+        // add the class of wrong so that all appropriate CSS runs
+        element.classList.add('wrong')
+        // deduct time from the clock for incorrect answers
+        secondsLeft = secondsLeft - penaltyTime;
+        // fun message
+        createDiv.textContent = "Oops! That's not quite it!"
+    }
 }
 
 //delete existing html buttons
 function resetAll() {
     nextButton.classList.add('hide')
-    // if there is a child remove it.
+    // if there is a child (js answerbuttons) remove it.
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
         (answerButtonsElement.firstChild)
     }
+    // remove classes to reset CSS
+    clearSetClass()
 }
 
-// change class for if right or wrong
-function setClass (element, correct) {
-    clearSetClass(element)
-    if (correct) {
-        element.classList.add('correct')
-    } else {
-        element.classList.add('wrong')
-    }
-}
-
-// clear set class
+// clear set class for above function
 function clearSetClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
-//subtracts for incorrect answers
-
-//keeps timer from counting in the negative
+// determines if there are any remaining questions
+if (questionIndex >= questions.length) {
+    //show results function with user score
+    showResults();
+    createDiv.textContent = "You finished!" + " " + "You received " + score + "/" + "out of a possible" + questions.length;
+} else {
+    //go to the next question
+    setNextQuestion();
+}
 
 //show results 
 function showResults() {
@@ -108,7 +122,6 @@ function showResults() {
 //questions
 const questions = [
     {
-        question:"Commonly used data types do NOT include:",
         answers:["strings", "booleans", "alerts", "numbers"],
         correct:"alerts"
     },
