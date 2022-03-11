@@ -12,6 +12,11 @@ const questionHeader = document.getElementById('container-header')
 const mainContainer = document.getElementById('main-container')
 const quitButton = document.getElementById('quit')
 
+// Seconds left at 20 seconds per question
+var secondsLeft = 100;
+// penaltyTime is 10 seconds
+var penaltyTime = 10;
+
 let shuffledQuestions, questionList
 
 startButton.addEventListener('click', startGame)
@@ -35,6 +40,11 @@ function firstQuestion() {
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
+
+// Starts the timer on the button, timer displays on screen.
+timer.addEventListener("click", ???? () {
+    // If there is 
+})
 
 // showing the questions
 function setNextQuestion() {
@@ -102,12 +112,16 @@ function clearSetClass(element) {
     element.classList.remove('wrong')
 }
 
-// determines if there are any remaining questions
-if (questionIndex >= questions.length) {
+// determines if there are any remaining questions + time
+if (questionIndex >= questions.length, secondsLeft <= 0) {
     //show results function with user score
     showResults();
+    //I have this text formatted in HTML, how do I dynamically 
+    //set like here with that formatting??????
     createDiv.textContent = "You finished!" + " " + "You received " + score + "/" + "out of a possible" + questions.length;
-} else {
+} 
+// If there are questions left in the string and time is greater than 0.
+else if (secondsLeft > 0) {
     //go to the next question
     setNextQuestion();
 }
