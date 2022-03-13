@@ -90,7 +90,7 @@ function showQuestion(question) {
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer;
-        button.classList.add('btn')
+        button.classList.add('btn', 'stylechange')
     // check if answer is correct
         if (answer.correct) {
             button.dataset.correct = answer.correct
@@ -106,7 +106,7 @@ function selectAnswer (question, correct) {
     if (question.answer === questions.correct) {
         // correct answer
         // add the class of correct so that all appropriate CSS runs
-        element.classList.add('correct')
+        ('stylechange').classList.add('correct')
         // increase the score
         score++
         // Fun message
@@ -114,7 +114,7 @@ function selectAnswer (question, correct) {
     } else {
         // incorrect answer
         // add the class of wrong so that all appropriate CSS runs
-        element.classList.add('wrong')
+        ('stylechange').classList.add('wrong')
         // deduct time from the clock for incorrect answers
         secondsLeft = secondsLeft - penaltyTime;
         // fun message
