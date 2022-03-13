@@ -112,7 +112,7 @@ function clearSetClass(element) {
 }
 
 // determines if there are any remaining questions + time
-if (questionIndex >= questions.length, secondsLeft <= 0) {
+if (questions.length <= 0, secondsLeft <= 0) {
     //show results function with user score
     showResults();
     //I have this text formatted in HTML, how do I dynamically 
