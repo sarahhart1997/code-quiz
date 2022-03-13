@@ -11,6 +11,7 @@ const restartButton = document.getElementById('restart')
 const questionHeader = document.getElementById('container-header')
 const mainContainer = document.getElementById('main-container')
 const quitButton = document.getElementById('quit')
+const stylechange = document.getElementsByClassName("stylechange")
 
 //questions
 const questions = [
