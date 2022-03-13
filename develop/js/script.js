@@ -12,6 +12,35 @@ const questionHeader = document.getElementById('container-header')
 const mainContainer = document.getElementById('main-container')
 const quitButton = document.getElementById('quit')
 
+//questions
+const questions = [
+    {
+        question:"Commonly used data types do NOT include:",
+        answers:["strings", "booleans", "alerts", "numbers"],
+        correct:"alerts"
+    },
+    {
+        question:"The condition in an if/else statement is enclosed with ________",
+        answers:["quotes", "curly brackets", "parenthesis", "square brackets"],
+        correct: "parenthesis"
+    },
+    {
+        question:"Arrays in JavaScript can be used to store _____.", 
+        answers:["numbers and strings", "other arrays", "booleans", "all of the above"],
+        correct:"all of the above"
+    },
+    {
+        question:"String values must be enclosed within _____ when being assigned to variables.",
+        answers:["commas", "curly brackets", "quotes", "parenthesis"],
+        correct:"quotes"
+    },
+    {
+        question:"A very useful tool used during development and debugging for printing content to the debugger is:",
+        answers:["JavaScript", "termial/bash", "for loops", "console.log"],
+        correct:"console.log"
+    }
+];
+
 // Seconds left at 20 seconds per question
 var secondsLeft = 100;
 // penaltyTime is 10 seconds
@@ -47,7 +76,7 @@ function firstQuestion() {
 
 // showing the questions
 function setNextQuestion() {
-    resetAll()
+    // resetAll()
         //shuffle questions/question list defined
         questionList = 0
         shuffledQuestions = questions.sort(() => Math.random() - 0.7)
@@ -94,22 +123,22 @@ function selectAnswer (question, correct) {
 }
 
 //delete existing html buttons
-function resetAll() {
-    nextButton.classList.add('hide')
-    // if there is a child (js answerbuttons) remove it.
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild)
-    }
-    // remove classes to reset CSS
-    clearSetClass()
-}
+// function resetAll() {
+//     nextButton.classList.add('hide')
+//     // if there is a child (js answerbuttons) remove it.
+//     while (answerButtonsElement.firstChild) {
+//         answerButtonsElement.removeChild
+//         (answerButtonsElement.firstChild)
+//     }
+//     // remove classes to reset CSS
+//     clearSetClass()
+// }
 
-// clear set class for above function
-function clearSetClass(element) {
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
-}
+// // clear set class for above function
+// function clearSetClass(element) {
+//     element.classList.remove('correct')
+//     element.classList.remove('wrong')
+// }
 
 // determines if there are any remaining questions + time
 if (questions.length <= 0, secondsLeft <= 0) {
@@ -131,32 +160,3 @@ function showResults() {
 }
 
 //submit the score
-
-//questions
-const questions = [
-    {
-        question:"Commonly used data types do NOT include:",
-        answers:["strings", "booleans", "alerts", "numbers"],
-        correct:"alerts"
-    },
-    {
-        question:"The condition in an if/else statement is enclosed with ________",
-        answers:["quotes", "curly brackets", "parenthesis", "square brackets"],
-        correct: "parenthesis"
-    },
-    {
-        question:"Arrays in JavaScript can be used to store _____.", 
-        answers:["numbers and strings", "other arrays", "booleans", "all of the above"],
-        correct:"all of the above"
-    },
-    {
-        question:"String values must be enclosed within _____ when being assigned to variables.",
-        answers:["commas", "curly brackets", "quotes", "parenthesis"],
-        correct:"quotes"
-    },
-    {
-        question:"A very useful tool used during development and debugging for printing content to the debugger is:",
-        answers:["JavaScript", "termial/bash", "for loops", "console.log"],
-        correct:"console.log"
-    }
-];
