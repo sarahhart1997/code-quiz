@@ -97,36 +97,23 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct
         }
     // event listener which runs select answer function
-        button.addEventListener('click', selectAnswer)
+        button.addEventListener('click', function(e) {
+            var element = e.target;
+            if (element.textContent === question.correct) {
+            document.body.style.background = 'green';
+            } else {
+            document.body.style.background = 'red';
+            secondsLeft = secondsLeft - penaltyTime;
+            createDiv.textContent = "Oops! That's not quite it!"
+            }
+        })
         questionContainerElement.appendChild(button)
     })
 }
 
 //insert answers from the string
-function selectAnswer (question) {
-    if (question.answer === questions.correct) {
-        // correct answer
-        // add the class of correct so that all appropriate CSS runs
-        // for (let i=0; i < stylechange.length; i++) {
-        //     stylechange.classList.add('correct')
-        // }
-        document.body.style.background = 'green';
-        // increase the score
-        // score++
-        // Fun message
-        // createDiv.textContent = "Yay!! " + questions[questionIndex].correct;
-    } else {
-        // incorrect answer
-        // add the class of wrong so that all appropriate CSS runs
-        // for (let i=0; i < stylechange.length; i++) {
-        //     stylechange.classList.add('correct')
-        // }
-        document.body.style.background = 'red';
-        // deduct time from the clock for incorrect answers
-        secondsLeft = secondsLeft - penaltyTime;
-        // fun message
-        createDiv.textContent = "Oops! That's not quite it!"
-    }
+function selectAnswer (event) {
+   
 }
 
 //delete existing html buttons
