@@ -46,7 +46,10 @@ var secondsLeft = 100;
 // penaltyTime is 10 seconds
 var penaltyTime = 10;
 
-let shuffledQuestions, questionList
+// Defining question list
+// const questionList = questions.length;
+// var setQuestion = questions[questionList].question;
+// var setAnswers = questions[questionList].answers;
 
 startButton.addEventListener('click', startGame)
 
@@ -103,6 +106,7 @@ function showQuestion(question) {
             if (element.textContent === question.correct) {
             document.body.style.background = "#00852c";
             button.classList.add('correct');
+            //createDiv.textContent = "That's right! Great work"
             } else {
             document.body.style.background = "#c70202";
             button.classList.add('wrong');
