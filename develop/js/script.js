@@ -11,7 +11,7 @@ const restartButton = document.getElementById('restart')
 const questionHeader = document.getElementById('container-header')
 const mainContainer = document.getElementById('main-container')
 const quitButton = document.getElementById('quit')
-const stylechange = document.getElementsByClassName("stylechange")
+const stylechange = document.getElementsByClassName('stylechange')
 
 //questions
 const questions = [
@@ -103,19 +103,25 @@ function showQuestion(question) {
 }
 
 //insert answers from the string
-function selectAnswer (question, correct) {
+function selectAnswer (question) {
     if (question.answer === questions.correct) {
         // correct answer
         // add the class of correct so that all appropriate CSS runs
-        ('stylechange').classList.add('correct')
+        // for (let i=0; i < stylechange.length; i++) {
+        //     stylechange.classList.add('correct')
+        // }
+        document.body.style.background = 'green';
         // increase the score
-        score++
+        // score++
         // Fun message
-        createDiv.textContent = "Yay!! " + questions[questionIndex].correct;
+        // createDiv.textContent = "Yay!! " + questions[questionIndex].correct;
     } else {
         // incorrect answer
         // add the class of wrong so that all appropriate CSS runs
-        ('stylechange').classList.add('wrong')
+        // for (let i=0; i < stylechange.length; i++) {
+        //     stylechange.classList.add('correct')
+        // }
+        document.body.style.background = 'red';
         // deduct time from the clock for incorrect answers
         secondsLeft = secondsLeft - penaltyTime;
         // fun message
