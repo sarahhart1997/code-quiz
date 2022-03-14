@@ -11,7 +11,6 @@ const restartButton = document.getElementById('restart')
 const questionHeader = document.getElementById('container-header')
 const mainContainer = document.getElementById('main-container')
 const quitButton = document.getElementById('quit')
-const stylechange = document.getElementsByClassName('stylechange')
 
 //questions
 const questions = [
@@ -78,10 +77,11 @@ function firstQuestion() {
 // showing the questions
 function setNextQuestion() {
     // resetAll()
-        //shuffle questions/question list defined
+    for (let i=0; i < 5; i++) {
         questionList = 0
         shuffledQuestions = questions.sort(() => Math.random() - 0.7)
-    showQuestion(shuffledQuestions[questionList])
+        showQuestion(shuffledQuestions[questionList])
+        }
 }
 
 // sort through the questions and create buttons for them
@@ -91,20 +91,23 @@ function showQuestion(question) {
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer;
-        button.classList.add('btn', 'stylechange')
+        button.setAttribute("id", "btn");
+        // button.classList.add('btn')
     // check if answer is correct
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
-    // event listener which runs select answer function
+    // event listener which changes style based on correct or wrong answer
         button.addEventListener('click', function(e) {
             var element = e.target;
             if (element.textContent === question.correct) {
-            document.body.style.background = 'green';
+            document.body.style.background = "#00852c";
+            button.classList.add('correct');
             } else {
-            document.body.style.background = 'red';
+            document.body.style.background = "#c70202";
+            button.classList.add('wrong');
             secondsLeft = secondsLeft - penaltyTime;
-            createDiv.textContent = "Oops! That's not quite it!"
+            // createDiv.textContent = "Oops! That's not quite it!"
             }
         })
         questionContainerElement.appendChild(button)

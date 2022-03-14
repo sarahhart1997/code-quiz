@@ -1,7 +1,7 @@
 :root {
     --color-neutral: 200;
-    --color-wrong: 0;
-    --color-correct: 145;
+    --color-correct: #00852c;
+    --color-wrong: #c70202;
     --color-base: purple;
     --secondcolor: #bfb3e4;
 }
@@ -63,16 +63,6 @@ body {
     text-align: center;
     line-height: 30px;
     border-radius: 5px;
-}
-
-
-/* style change based on wrong or right */
-body.correct {
-    --color: var(--color-correct);
-}
-
-body.wrong {
-    --color: var(--color-wrong);
 }
 
 /* making the main container stand out from the background */
@@ -159,7 +149,7 @@ body.wrong {
 }
 
 /* answer spacing/organization */
-.btn-grid, .btn {
+.btn-grid, #btn {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
@@ -167,7 +157,7 @@ body.wrong {
 }
 
 /* basic answer button styling */
-.btn {
+#btn, #start-btn {
     --color: var(--color-neutral);
     border: 1px solid grey;
     background-color: var(--color-base);
@@ -178,19 +168,19 @@ body.wrong {
 }
 
 /* answer buttons change on hover */
-.btn:hover {
+#btn:hover {
     border-color: black; 
     cursor: pointer;
     background-color: var(--secondcolor);  
 }
 
 /* button color change with right or wrong answer */
-.btn.correct {
+#btn.correct {
     --color: var(--color-correct);
     text: black;
 }
 
-.btn.wrong {
+#btn.wrong {
     --color: var(--color-wrong);
 }
 
