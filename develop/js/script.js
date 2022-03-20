@@ -11,6 +11,8 @@ const restartButton = document.getElementById('restart')
 const questionHeader = document.getElementById('container-header')
 const mainContainer = document.getElementById('main-container')
 const quitButton = document.getElementById('quit')
+var timer = document.getElementById('timer')
+var timerid
 
 //questions
 const questions = [
@@ -70,9 +72,18 @@ function firstQuestion() {
     quizRules.classList.add('hide')
     mainContainer.classList.remove('hide')
     questionContainerElement.classList.remove('hide')
+    timerid = setInterval(clock, 1000)
+    timer.textContent = secondsLeft
     setNextQuestion()
 }
 
+function clock() {
+    secondsLeft--
+    timer.textContent = secondsLeft
+    if(secondsLeft <= 0) {
+        showResults()
+    }
+}
 // Starts the timer on the button, timer displays on screen.
 // timer.addEventListener("click", ???? () {
 // })
@@ -90,7 +101,8 @@ function setNextQuestion() {
 // sort through the questions and create buttons for them
 function showQuestion(question) {
     questionContainerElement.innerText = question.question
-    questionHeader.classList.remove('hide')
+    questionHeader.classList.remove("hide")
+    questionHeader.style.display = "flex"
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer;
@@ -158,6 +170,8 @@ else if (secondsLeft > 0) {
 //show results 
 function showResults() {
     resultsPage.classList.remove('hide')
+    clearInterval(timerid)
+    mainContainer.classList.add('hide')
 }
 
 //submit the score
